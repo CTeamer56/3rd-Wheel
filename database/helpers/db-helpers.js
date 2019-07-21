@@ -4,7 +4,7 @@ const restCategories = () => {
   const options = {
     method: 'get',
     url: 'https://api.yelp.com/v3/categories',
-    headers: { 'Authorization': `Bearer ${process.env.YELP_KEY}` },
+    headers: { Authorization: `Bearer ${process.env.YELP_KEY}` },
   };
   return axios(options)
     .then((response) => {

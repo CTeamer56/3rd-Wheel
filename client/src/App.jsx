@@ -120,9 +120,9 @@ class App extends React.Component {
           isLoggedIn ? 
           // !loggedIn routes
             <Switch>
-              <Route exact path="/" components={() => {
+              {/* <Route exact path="/" components={() => {
                 <Redirect to="/profile" />
-              }} />
+              }} /> */}
               <Route path="/matches" component={Matches} />
               <Route path="/userinfo" component={(props) => <UserInfo {...props} id={user.id} />} />
               <Route path="/hotspots" component={HotSpots} />
@@ -132,8 +132,8 @@ class App extends React.Component {
           :
           // !loggedIn routes
             <Switch>
-              <Route exact path="/" render={() => (
-                <Redirect to="/login"/>
+              <Route path="/" render={() => (
+                <Redirect to="/"/>
               )} />
               <Route path="/signup" render={(props) => <Signup {...props} showAuthFail={this.showAuthFail} gateKeeper={this.gateKeeper} isLoggedIn={isLoggedIn} />} />
               <Route path="/login" render={(props) => <Login {...props} showAuthFail={this.showAuthFail} gateKeeper={this.gateKeeper} isLoggedIn={isLoggedIn} />} />
