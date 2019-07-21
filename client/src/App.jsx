@@ -13,7 +13,7 @@ import Pending from './components/Pending';
 import Matches from './components/Matches';
 import Signup from './components/Signup';
 import Login from './components/Login';
-import Interests from './components/Interests';
+import UserInfo from './components/UserInfo';
 
 
 class App extends React.Component {
@@ -99,7 +99,7 @@ class App extends React.Component {
           <Nav className="top-bar">
             <NavDropdown title="Your Card" id="basic-nav-dropdown">
               <Link className="dropdown-item" to="/profile" >Profile</Link>
-              <Link className="dropdown-item" to="/interests" >Interests</Link>
+              <Link className="dropdown-item" to="/userinfo" >User Info</Link>
             </NavDropdown>
             <Link className="nav-link" to="/hotspots" >Hot Spots</Link>
             <Link className="nav-link" to="/matches" >Matches</Link>
@@ -124,7 +124,7 @@ class App extends React.Component {
                 <Redirect to="/profile" />
               }} />
               <Route path="/matches" component={Matches} />
-              <Route path="/interests" component={Interests} />
+              <Route path="/userinfo" component={(props) => <UserInfo {...props} id={user.id} />} />
               <Route path="/hotspots" component={HotSpots} />
               <Route path="/pending" component={Pending} />
               <Route path="/profile" component={Profile} />
